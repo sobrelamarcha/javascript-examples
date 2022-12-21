@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+</head>
+<body>
+    <h1>Regular Expressions</h1>
+    <p class='result' style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+        The output goes here!
+    </p>
+    <button id='clickBtn' style="color:black;font-size:19px;">Click Me</button>
+
+    <script>
+        const btn = document.querySelector('#clickBtn');
+        const pTag = document.querySelector('.result');
+
+        // ejemplo 1 y sus pruebas:
+        // const myString = `Regular expressions are patterns used to match character combinations in strings.
+        // In JavaScript, regular expressions are also objects`;
+        // const regPattern = /ions/;
+        // const regPattern = /ions/g;
+        // const regPattern = /Ions/i;
+
+
+        // ejemplo 2 y sus pruebas:
+        // const myString = 'Mam, Mom, Mum';
+        // const regPattern = /M/g;
+        // const regPattern = /M.m/g;
+
+
+        // ejemplo 3 y sus pruebas:
+        // const myString = `Regular expressions are patterns used to match character combinations in strings.
+        // In JavaScript, regular expressions are also objects`;
+        // const regPattern = /[J]/g;
+        // const regPattern = /[JaS]/g;
+        // const regPattern = /[^JaS]/g;        
+
+
+        // ejemplo 4 y sus pruebas:
+        // const myString = `Regular expressions are patterns used to match character combinations in strings
+        // 100% true. In JavaScript, regular expressions are also objects!`;
+        // const regPattern = /\w/g;
+        // const regPattern = /\W/g;
+        // const regPattern = /\d/g;
+
+
+        // ejemplo 5 y sus pruebas:
+        // nota: Sc es un alias de Currency_Symbol
+        // const myString = `$5, €10, ¥109`;
+        // const regPattern = /\p{Sc}\d/gu;
+        // const regPattern = /\p{Currency_Symbol}\d/gu;
+
+
+        // ejemplo 6 y sus pruebas:
+        // const myString = `Regular expressions are awesome!`;
+        // const regPattern = /a+/g;
+
+
+        // ejemplo 7 y sus pruebas:
+        // nótese como 'gu' no lo encuentra porque es importante el orden, es decir, después de encontrar 'la' ya el puntero ha pasado de largo de 'gu'
+        // const myString = `Regular expressions are awesome!`;
+        // const regPattern = /eg|la|gu/g;
+
+
+        // ejemplo 8 y sus pruebas:
+        // const myString= "google.com apple.com apple.com.au support myer-online.com"
+        // const regPattern= /(\w+\.)+\w+/g;
+        // const regPattern= /([\w-]+\.)+\w+/g;
+
+
+
+
+
+        btn.addEventListener('click',(e)=>{
+            const result = myString.match(regPattern);
+            pTag.innerHTML = result;
+        });
+    </script>
+
+</body>
+</html>
