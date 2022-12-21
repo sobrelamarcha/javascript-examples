@@ -77,6 +77,17 @@ const matchAllDates = () => {
 
 }
 
+const replaceYears = () => {
+
+    const myString = 'Yo nací en 1978. ¿Hay alguien más que nació en 1978?'
+    const regex = /\d{4}/g
+    const result = myString.replace(regex, '1980')
+
+    console.log(result);
+}
+
+
+
 
 
 /* ----------------------- */
@@ -86,7 +97,8 @@ const matchAllDates = () => {
 // matchTagAndProperty()
 // matchTextWithEqualQuotes()
 // matchDate()
-matchAllDates()
+// matchAllDates()
+replaceYears()
 
 
 
