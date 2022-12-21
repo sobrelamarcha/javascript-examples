@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Function in JavaScript</title>
+</head>
+
+<body>
+    <h1>setTimeout function in JavaScript</h1>
+    <h2 id="output"></h2>
+
+    <form name="myForm" action="#">
+        <button id='stopbtn'>Stop</button>
+    </form>
+
+    <script>
+        
+        function displayResult1() {
+            const previousContent = document.getElementById("output").innerHTML
+            
+            document.getElementById("output").innerHTML = previousContent.concat('tictoc')
+        }
+        
+        let timer = setInterval(displayResult1, 1000);
+
+        let stopBtn = document.querySelector('#stopbtn');
+
+        stopBtn.addEventListener('click', (e) => {
+            e.preventDefault(); //to prevent the form to submit
+            clearInterval(timer);
+            
+        });
+
+    </script>
+</body>
+
+</html>

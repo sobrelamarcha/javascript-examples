@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Function in JavaScript</title>
+</head>
+
+<body>
+    <h1>setTimeout function in JavaScript</h1>
+    <h2 id="output">Output goes here:</h2>
+
+    <script>
+        function displayResult1() {
+            document.getElementById("output").innerHTML = 'Loading.....';
+        }
+
+        function displayResult2() {
+            document.getElementById("output").innerHTML = 'You will see this message in 10 seconds';
+        }
+
+        function displayResult3() {
+            document.getElementById("output").innerHTML = 'This will not be printed because we use clearTimeout';
+        }
+        let timer3 = setTimeout(displayResult3, 1000); //esta no se ejecutará porque se cancela más abajo
+        setTimeout(displayResult1, 5000);
+        setTimeout(displayResult2, 10000);
+        clearTimeout(timer3);
+    </script>
+</body>
+
+</html>
