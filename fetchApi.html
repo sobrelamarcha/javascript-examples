@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using the Promise-based Fetch API</title>
+</head>
+
+<body>
+    <h1>Fetching data</h1>
+    <h4>Nota: este ejemplo cargarlo desde xampp en http://127.0.0.1/proyectos/javascript/sandbox/fetchApi.html</h4>
+
+    <div id="output">
+        <p>Name: <span class="name">Name</span></p>
+        <p>Birth: <span class="birth">Birth</span></p>
+        <p>Favorite Books:</p>
+        <ul id="books">
+        </ul>
+    </div>
+    <script>
+        const output = document.querySelector('#output');
+        const name = document.querySelector('.name');
+        const birth = document.querySelector('.birth');
+        const ul = document.querySelector('#books');
+
+        const fetchPromise = fetch('http://127.0.0.1/proyectos/fakeapi/users.php');
+        fetchPromise.then(response => {
+            return response.json()
+        }).then(data => {
+
+            name.innerHTML = data.name;
+            birth.innerHTML = data.birth;
+            listOfBooks(data.books);
+
+        })
+        
+        function listOfBooks(books){
+            for (const book of books) {
+                const fetchBook = fetch(book);
+                fetchBook.then(response => {
+                    return response.json();
+                }).then(book => {
+                    let li = document.createElement('li');
+                    li.innerHTML = book.title;
+                    ul.appendChild(li);
+                });
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
