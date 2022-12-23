@@ -25,27 +25,34 @@
         const birth = document.querySelector('.birth');
         const ul = document.querySelector('#books');
 
-        const fetchPromise = fetch('http://127.0.0.1/proyectos/fakeapi/users.php');
-        fetchPromise.then(response => {
-            return response.json()
-        }).then(data => {
-
-            name.innerHTML = data.name;
-            birth.innerHTML = data.birth;
-            listOfBooks(data.books);
-
-        })
+        const userId = 1;
         
-        function listOfBooks(books){
+        showUserData(userId);
+
+
+
+        async function showUserData(id){
+
+            const fetchPromise = await fetch(`http://127.0.0.1/proyectos/fakeapi/users.php?id=${id}`);
+            const theUser = await fetchPromise.json()
+
+            name.innerHTML = theUser.name;
+            birth.innerHTML = theUser.birth;
+            listOfBooks(theUser.books);
+
+        }
+
+        async function listOfBooks(books){
+            
             for (const book of books) {
-                const fetchBook = fetch(book);
-                fetchBook.then(response => {
-                    return response.json();
-                }).then(book => {
-                    let li = document.createElement('li');
-                    li.innerHTML = book.title;
-                    ul.appendChild(li);
-                });
+
+                const fetchBook = await fetch(book);
+                const theBook = await fetchBook.json();
+
+                let li = document.createElement('li');
+                li.innerHTML = theBook.title;
+                ul.appendChild(li);
+
             }
 
         }
