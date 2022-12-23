@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Modules</title>
+</head>
+
+<body>
+    <h1>JavaScript Modules</h1>
+    <h4>Nota: este ejemplo necesita ser ejecutado en un servidor web, como XAMPP. También este ejemplo funciona con Live Server de Visual Code Studio</h4>
+    <h3>Actor: <span id="actorName"></span></h3>
+    <script type='module'>
+        
+        import P from './person.js'; // importar un export default cambiándole el nombre (alias) de la clase Person a P
+        import {firstName, lastName as ln} from './module1.js'; // importar de forma normal y con alias
+        import {currentUser as c} from './module1.js';
+        import * as module1Obj from './module1.js'; // importamos todo dentro del objeto module1Obj
+
+        const tom = new P('tommy');
+        console.log(tom);
+
+        console.log(firstName);
+        console.log(ln);
+
+        const user = c('miguel');
+        console.log(user);
+
+        console.log('We can get last name like this: ' + module1Obj.lastName);
+
+    </script>
+</body>
+
+</html>
