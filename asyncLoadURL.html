@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using the Promise-based Fetch API</title>
+</head>
+
+<body>
+    <h1>Fetching data</h1>
+    <h4>Nota: este ejemplo cargarlo desde xampp en http://127.0.0.1/proyectos/javascript/sandbox/asyncLoadURL.html</h4>
+
+    <div id="output">
+    </div>
+
+    <script>
+        async function loadUrl(url) {
+            try {
+
+                const result = await fetch(url);
+                if (result.status == 200) {
+                    let json = await result.json();
+                    console.log(json);
+                } else {
+                    throw new Error(result.status);
+                }
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        loadUrl('http://127.0.0.1/proyectos/fakeapi/users.php?id=1');
+    </script>
+</body>
+
+</html>
