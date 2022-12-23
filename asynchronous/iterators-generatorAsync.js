@@ -1,5 +1,5 @@
-// async generators
-// sirve para convertir una variable en iterable esta vez de forma asíncrona. Similar a symbolIteratorAsync.js pero esta vez con menos código y más fácil de leer
+// Sirve para convertir una variable en iterable esta vez de forma asíncrona.
+// Similar a iterators-symbolIteratorAsync.js pero esta vez con menos código y más fácil de leer
 
 let pages = {
     from: 1,

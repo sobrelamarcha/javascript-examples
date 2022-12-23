@@ -1,4 +1,5 @@
-// sirve para convertir una variable en iterable. Véase generator.js para ver una forma similar de hacerlo con menos código y más legible.
+// Sirve para convertir una variable en iterable.
+// Véase iterators-generator.js para ver una forma similar de hacerlo con menos código y más legible.
 
 let pages = {
     from: 1,

@@ -1,4 +1,5 @@
-// sirve para convertir una variable en iterable. Similar a symbolIterator.js pero esta forma es más fácil de leer y tiene menos código
+// Sirve para convertir una variable en iterable.
+// Similar a iterators-symbolIterator.js pero esta forma es más fácil de leer y tiene menos código
 
 let pages = {
     from: 1,

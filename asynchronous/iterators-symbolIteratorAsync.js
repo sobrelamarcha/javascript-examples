@@ -1,4 +1,5 @@
-// sirve para convertir una variable en iterable, con funcionamiento asíncrono. Véase generatorAsync.js para ver una forma similar de hacerlo con menos código y más legible.
+// Sirve para convertir una variable en iterable, con funcionamiento asíncrono.
+// Véase iterators-generatorAsync.js para ver una forma similar de hacerlo con menos código y más legible.
 
 let pages = {
     from: 1,
