@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="module">
+        import * as Main from './main.js';
+        const n = 12;
+        const m = 4;
+
+        const name = Main.name('Andy');
+        console.log (`Hi ${name} these are the calculations:`);
+        console.log(' + => ' + Main.Calculate.calcAddition(n,m));
+        console.log(' - => ' + Main.Calculate.calcSubstraction(n,m))
+        console.log(' * => ' + Main.Calculate.calcMultiplication(n,m));
+        console.log(' / => ' + Main.Calculate.calcDivision(n,m));
+    </script>
+    
+</body>
+</html>
