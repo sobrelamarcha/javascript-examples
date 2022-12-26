@@ -10,7 +10,7 @@
 
 <body>
     <h1>Fetching data</h1>
-    <h4>Nota: este ejemplo cargarlo desde xampp en http://127.0.0.1/proyectos/javascript/sandbox/fetchApi.html</h4>
+    <h4>Nota: este ejemplo cargarlo desde xampp en http://127.0.0.1/proyectos/javascript/examples/asynchronous/fetchApi.html</h4>
 
     <div id="output">
         <p>Name: <span class="name">Name</span></p>
@@ -33,7 +33,7 @@
 
         async function showUserData(id){
 
-            const fetchPromise = await fetch(`http://127.0.0.1/proyectos/fakeapi/users.php?id=${id}`);
+            const fetchPromise = await fetch(`http://127.0.0.1/proyectos/javascript/examples/asynchronous/php-fakeapi/users.php?id=${id}`);
             const theUser = await fetchPromise.json()
 
             name.innerHTML = theUser.name;
